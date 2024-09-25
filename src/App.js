@@ -1,23 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { NavBar} from './Components/NavBar';
+import AddProduct from './Screens/AddProduct';
+import {Cart, addToCart} from './Screens/Cart';
+import React, {useState} from 'react';
+
 
 function App() {
+  const [availableItems, setAvailableItems] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+  
+  const addAvailableItems = (newItem) => {
+    setAvailableItems([...availableItems, newItem]);
+    console.log('producto agregado:', newItem);
+
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header>
+        <h1>Lista del shopping</h1>
       </header>
+      <div>
+        <Router className='Bar-Nav'>
+          <NavBar/>
+          <Routes>
+
+            <Route 
+            className='elemento'
+            path='/AddProduct'
+            element={<AddProduct addToAvailableItems={addAvailableItems}/> }
+            />
+
+            <Route 
+            className='elemento'
+            path='/Cart'
+            element={<Cart availableItems={availableItems} cartItems={cartItems} setCartItems={setCartItems} setAvailableItems={setAvailableItems} />}
+            />
+          </Routes>
+
+        </Router>
+      </div>
     </div>
   );
 }
