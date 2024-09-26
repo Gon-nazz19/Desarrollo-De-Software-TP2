@@ -26,9 +26,9 @@ export function Cart({ availableItems, cartItems, setCartItems, setAvailableItem
                             <li key={index}>
                                 Producto: {item.name}<br/>
                                 Cantidad: {item.quantity}<br/>
-                                {item.description !== NaN ? (
+                                {item.description ? (
                                     <p>Descripción: {item.description}</p>
-                                ): ({})}
+                                ): ('')}
                                 <EditItemButton
                                         item={item}
                                         availableItems={availableItems}
@@ -69,9 +69,9 @@ export function Cart({ availableItems, cartItems, setCartItems, setAvailableItem
                                     />
                                     Producto: {item.name}<br/>
                                     Cantidad: {item.quantity}<br/>
-                                    {item.description !== NaN ? (
+                                    {item.description ? (
                                         <p>{item.description}</p>
-                                    ): ({})}
+                                    ): ('')}
                                     
                                     <DeleteItemCart 
                                         item={item}
