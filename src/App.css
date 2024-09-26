@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+div {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
 header {
   background-color: #282c34;
@@ -16,21 +19,21 @@ header {
   color: #61dafb;
 }
 
-nav{
+nav {
   display: flex;
   flex-flow: nowrap;
   justify-content: center;
 }
 
-nav ul{
+nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
   padding-bottom: 20px;
 }
 
-nav li{
-  display: inline; 
+nav li {
+  display: inline;
 }
 
 nav a {
@@ -46,4 +49,56 @@ nav a:hover {
   text-decoration: underline;
   background-color: black;
   color: #ffffff;
+}
+input {
+  border-radius: 5px;
+  outline: none;
+}
+textarea{
+  border-radius: 5px;
+  outline: none;
+}
+
+#ProdDisp {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#ProdDisp ul {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 15px; 
+  padding: 0;
+}
+
+#ProdDisp li {
+  list-style: none;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#ProdDisp li:hover {
+  transform: scale(1.02); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#Items-del-carrito {
+  list-style: none;
+  text-align: left;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.Cart ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
 }

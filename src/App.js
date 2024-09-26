@@ -2,7 +2,7 @@ import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { NavBar} from './Components/NavBar';
 import AddProduct from './Screens/AddProduct';
-import {Cart, addToCart} from './Screens/Cart';
+import {Cart} from './Screens/Cart';
 import React, {useState} from 'react';
 
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import AddToCartButton from '../Components/AddToCartButton';
 import DeleteItemCart from '../Components/DeleteItemCart';
 import TogglePurchasedButton from '../Components/TogglePurchaseButton'
@@ -14,8 +14,9 @@ export function Cart({ availableItems, cartItems, setCartItems, setAvailableItem
     return (
         <div className='Cart'>
             <h1>Carrito de compras</h1>
+
+            <h3>Productos Disponibles</h3>
             <div id='ProdDisp'>
-                <h3>Productos Disponibles</h3>
                 <ul>
                     {availableItems.length ===0 ? (
                         <p>No ingresó ningún producto</p>
@@ -46,8 +47,8 @@ export function Cart({ availableItems, cartItems, setCartItems, setAvailableItem
                 </ul>
             </div>
             
+            <h3>Productos en el carrito</h3>
             <div>
-                <h3>Productos en el carrito</h3>
                 {cartItems.length === 0 ? (
                     <p>No hay productos en el carrito</p>
                 ) : (
